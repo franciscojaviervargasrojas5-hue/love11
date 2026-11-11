@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Una sorpresa para mi Frania ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <canvas id="bgCanvas"></canvas>
+
+  <!-- Audio global que sonará desde el inicio -->
+  <audio id="loveSong" loop preload="auto">
+    <source src="cancion.mp3" type="audio/mpeg">
+    <source src="canción.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    
+    <!-- Fase de Juego -->
+    <div id="gamePhase">
+      <div class="progress-bar">
+        Palabra <span id="currentIndex">1</span> de <span id="totalWords">0</span>
+      </div>
+
+      <div class="phrase-box" id="phraseBox">
+        <!-- Las palabras descubiertas irán apareciendo aquí -->
+      </div>
+
+      <!-- Tarjeta 1: La Suma -->
+      <div class="card" id="mathCard">
+        <h2>Resuelve para liberar el globo 🎈</h2>
+        <div class="math-problem" id="mathProblem">5 + 4 + 2 = ?</div>
+        <div class="math-input-group">
+          <input type="number" id="mathAnswer" placeholder="?" autofocus>
+          <button id="checkBtn">Responder</button>
+        </div>
+      </div>
+
+      <!-- Tarjeta 2: El Globo -->
+      <div class="card hidden" id="balloonCard">
+        <h2>¡Correcto! Revienta el globo 💥</h2>
+        <div class="balloon-stage">
+          <div class="balloon" id="balloon">
+            <span class="balloon-text">¡Tócame!</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Fase Final -->
+    <div class="final-screen" id="finalScreen">
+      <h1>❤️ ¡Para ti, mi amor! ❤️</h1>
+      <div class="final-text" id="finalMessage"></div>
+      
+      <div class="music-player">
+        <span>🎵 Sonando: Nuestra Canción</span>
+        <button id="toggleMusicBtn">⏸️ Pausar</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
